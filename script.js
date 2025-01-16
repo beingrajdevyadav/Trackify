@@ -16,7 +16,39 @@ class TodoApp {
     }
 
     // to save in local storage
-    saveToLocalStorage(){
+    saveToLocalStorage() {
         localStorage.setItem("todos", JSON.stringify(this.todos));
+    }
+
+    // to add todo item
+    addTodo() {
+        const text = this.todoInput.value.trim();
+        if (!text) return alert("Task cannot be empty!");
+
+        const newTodo = {
+            id: Date.now(),
+            text,
+            completed: false
+        };
+
+        this.todos.push(newTodo);
+        this.saveToLocalStorage();
+        this.todoInput.value = "";
+        this.render();
+    }
+
+    // to edit todo
+    editTodo(id) {
+        const newText = prompt("Edit your task : ");
+
+        if (newText) {
+            this.todos.map(todo =>
+                todo.id === id ? {
+                    ...todo, text: newText
+                } : todo
+            );
+            this.saveToLocalStorage();
+            this.render();
+        }
     }
 }

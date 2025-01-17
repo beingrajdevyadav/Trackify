@@ -11,7 +11,9 @@
 body{
     padding: 1rem;
 }
-
+.index-holder{
+    display: none;
+}
 .todo-list{
     list-style-type: none;
     padding: 0;

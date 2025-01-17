@@ -51,4 +51,10 @@ class TodoApp {
             this.render();
         }
     }
+
+    toggleComplete(id){
+        this.todos = this.todos.map(todo=>todo.id === id ? {...todo, completed: !todo.completed} : todo);
+        this.saveToLocalStorage();
+        this.render();
+    }
 }

@@ -10,7 +10,7 @@ class TodoApp {
         this.addTodoBtn = document.getElementById("addTodoBtn");
 
         // to handle addTodoBtn click
-        this.addTodoBtn.addEventListener("click", () => this.addTodoBtn());
+        this.addTodoBtn.addEventListener("click", () => this.addTodo());
         this.render();
 
     }
@@ -53,26 +53,26 @@ class TodoApp {
     }
 
     // to toggle Complete
-    toggleComplete(id){
-        this.todos = this.todos.map(todo=>todo.id === id ? {...todo, completed: !todo.completed} : todo);
+    toggleComplete(id) {
+        this.todos = this.todos.map(todo => todo.id === id ? { ...todo, completed: !todo.completed } : todo);
         this.saveToLocalStorage();
         this.render();
     }
 
     // to delete todo
-    deleteTodo(id){
-        this.todos = this.todos.filter(todo=>todo.id !== id  );
+    deleteTodo(id) {
+        this.todos = this.todos.filter(todo => todo.id !== id);
         this.saveToLocalStorage();
         this.render();
     }
 
     // to render todos
-    render(){
+    render() {
         this.todoList.innerHTML = '';
-        this.todos.forEach(todo=>{
+        this.todos.forEach(todo => {
             const li = document.createElement("li");
             li.className = 'todo-item';
-            if(todo.completed)
+            if (todo.completed)
                 li.classList.add("completed");
 
             li.innerHTML = `
@@ -92,3 +92,6 @@ class TodoApp {
 
 // creating an instance of TodoApp class
 const app = new TodoApp();
+// document.addEventListener('DOMContentLoaded', () => {
+//     const app = new TodoApp();
+// });

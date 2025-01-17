@@ -1,3 +1,10 @@
-<li><i class="fa-solid fa-quote-left"></i></li>  
-<li><i class="fa-solid fa-award"></i></li>
+// sabse pahle yesa toggle system banana hai 
 
+// 2 button hona chahiye
+1. add todo
+2. edit todo
+
+// jab add todo dikhai de tab, edit todo hide hona chahiye
+// jab edit todo dikhai de tab, add todo hide hona chahiye
+
+--- ek hi input field se dono task krna hai ---

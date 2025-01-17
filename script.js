@@ -39,17 +39,25 @@ class TodoApp {
 
     // to edit todo
     editTodo(id) {
-        const newText = prompt("Edit your task : ");
+        // const newText = prompt("Edit your task : ");
 
-        if (newText) {
-            this.todos.map(todo =>
-                todo.id === id ? {
-                    ...todo, text: newText
-                } : todo
-            );
-            this.saveToLocalStorage();
-            this.render();
+
+        this.todos.map(todo => {
+            // todo.id === id ? {
+            //     ...todo, text: newText
+            // } : todo
+
+            if (todo.id === id) {
+                console.log(todo);
+                this.todoInput.value = todo.text;
+            }
         }
+
+        );
+
+        this.saveToLocalStorage();
+        this.render();
+
     }
 
     // to toggle Complete

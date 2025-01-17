@@ -52,8 +52,16 @@ class TodoApp {
         }
     }
 
+    // to toggle Complete
     toggleComplete(id){
         this.todos = this.todos.map(todo=>todo.id === id ? {...todo, completed: !todo.completed} : todo);
+        this.saveToLocalStorage();
+        this.render();
+    }
+
+    // to delete todo
+    deleteTodo(id){
+        this.todos = this.todos.filter(todo=>todo.id !== id  );
         this.saveToLocalStorage();
         this.render();
     }

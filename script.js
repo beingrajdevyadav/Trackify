@@ -65,4 +65,28 @@ class TodoApp {
         this.saveToLocalStorage();
         this.render();
     }
-}
+
+    // to render todos
+    render(){
+        this.todoList.innerHTML = '';
+        this.todos.forEach(todo=>{
+            const li = document.createElement("li");
+            li.className = 'todo-item';
+            if(todo.completed)
+                li.classList.add("completed");
+
+            li.innerHTML = `
+            <span>${todo.text}</span>
+
+            <div>
+            <button onclick="app.toggleComplete(${todo.id})"><i class="fa-solid fa-square-check"></i></button>
+            <button onclick="app.editTodo(${todo.id})"><i class="fa-regular fa-pen-to-square"></i></button>
+            <button onclick="app.deleteTodo(${todo.id})"><i class="fa-solid fa-trash"></i></button>
+            </div>
+            `;
+
+            this.todoList.appendChild(li);
+        })
+    }
+};
+

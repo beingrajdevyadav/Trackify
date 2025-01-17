@@ -90,3 +90,5 @@ class TodoApp {
     }
 };
 
+// creating an instance of TodoApp class
+const app = new TodoApp();

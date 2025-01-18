@@ -8,6 +8,10 @@ class TodoApp {
         this.todoInput = document.getElementById("todoInput");
         // to select addTodoBtn tag
         this.addTodoBtn = document.getElementById("addTodoBtn");
+        // to select editTodoBtn tag
+        this.saveEditedTodoBtn = document.getElementById("saveEditedTodoBtn");
+        // to select indexHolder input
+        this.indexHolder = document.getElementById("indexHolder");
 
         // to handle addTodoBtn click
         this.addTodoBtn.addEventListener("click", () => this.addTodo());
@@ -43,13 +47,12 @@ class TodoApp {
 
 
         this.todos.map(todo => {
-            // todo.id === id ? {
-            //     ...todo, text: newText
-            // } : todo
-
+           
             if (todo.id === id) {
                 console.log(todo);
                 this.todoInput.value = todo.text;
+                this.indexHolder.value = todo.id;
+                // console.log(this.indexHolder)
             }
         }
 

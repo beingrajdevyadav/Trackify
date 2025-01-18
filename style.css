@@ -12,7 +12,10 @@ body{
     padding: 1rem;
 }
 .index-holder{
-    /* display: none; */
+    display: none;
+}
+.edit-btn{
+    display: none;
 }
 .todo-list{
     list-style-type: none;

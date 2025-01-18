@@ -49,10 +49,14 @@ class TodoApp {
         this.todos.map(todo => {
 
             if (todo.id === id) {
-                console.log(todo);
+                // console.log(todo);
                 this.todoInput.value = todo.text;
                 this.indexHolder.value = todo.id;
                 // console.log(this.indexHolder)
+
+                // to show and hide btns
+                this.addTodoBtn.style.display = "none";
+                this.saveEditedTodoBtn.style.display = "inline-block";
             }
         }
 
@@ -68,17 +72,23 @@ class TodoApp {
         const todoText = this.todoInput.value.trim();
         const indexHolderText = +this.indexHolder.value;
     
-        console.log('Edited Text:', todoText);
-        console.log('Todo ID:', indexHolderText);
+        // console.log('Edited Text:', todoText);
+        // console.log('Todo ID:', indexHolderText);
     
         this.todos = this.todos.map(todo =>
             todo.id === indexHolderText ? { ...todo, text: todoText } : todo
         );
     
-        console.log('Updated Todos:', this.todos);
+        // console.log('Updated Todos:', this.todos);
     
+        // to empty input fields
         this.todoInput.value = "";
         this.indexHolder.value = "";
+
+        // to show and hide btns
+        this.saveEditedTodoBtn.style.display = "none";
+        this.addTodoBtn.style.display = "inline-block";
+
         this.saveToLocalStorage();
         this.render();
     }

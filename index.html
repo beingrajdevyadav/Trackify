@@ -20,10 +20,9 @@
 <body>
     <header>
         <div class="logo">
-             <h1><span>T</span>rackify</h1>
+            <h1><span>T</span>rackify</h1>
         </div>
 
-            <input type="text" id="indexHolder" class="index-holder" placeholder="Index Holder" value="">
     </header>
 
     <main>
@@ -31,15 +30,18 @@
         <hr>
 
         <div class="todo-form">
+            <!-- indexholder input tag -->
+            <input type="text" id="indexHolder" class="index-holder" placeholder="Index Holder" value="">
+            <!-- add new task input tag -->
             <input type="text" placeholder="Add a new task !" id="todoInput">
             <button id="addTodoBtn"> <i class="fa-solid fa-plus"></i> Add</button>
-            <button id="saveEditedTodoBtn"> <i class="fa-regular fa-floppy-disk"></i> Save</button>
+            <button id="saveEditedTodoBtn" class="edit-btn"> <i class="fa-regular fa-floppy-disk"></i> Save</button>
         </div>
 
         <ul id="todoList" class="
         todo-list"></ul>
     </main>
-    
+
     <!-- custom javascript attached here -->
     <script src="script.js"></script>
 </body>

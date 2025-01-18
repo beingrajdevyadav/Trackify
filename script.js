@@ -15,6 +15,8 @@ class TodoApp {
 
         // to handle addTodoBtn click
         this.addTodoBtn.addEventListener("click", () => this.addTodo());
+        // to handle saveEditedTodoBtn click
+        this.saveEditedTodoBtn.addEventListener("click", () => this.saveEditedTodo());
         this.render();
 
     }
@@ -43,11 +45,9 @@ class TodoApp {
 
     // to edit todo
     editTodo(id) {
-        // const newText = prompt("Edit your task : ");
-
 
         this.todos.map(todo => {
-           
+
             if (todo.id === id) {
                 console.log(todo);
                 this.todoInput.value = todo.text;
@@ -58,10 +58,32 @@ class TodoApp {
 
         );
 
+        // to save and show
         this.saveToLocalStorage();
         this.render();
 
     }
+    // to save edited todo
+    saveEditedTodo() {
+        const todoText = this.todoInput.value.trim();
+        const indexHolderText = +this.indexHolder.value;
+    
+        console.log('Edited Text:', todoText);
+        console.log('Todo ID:', indexHolderText);
+    
+        this.todos = this.todos.map(todo =>
+            todo.id === indexHolderText ? { ...todo, text: todoText } : todo
+        );
+    
+        console.log('Updated Todos:', this.todos);
+    
+        this.todoInput.value = "";
+        this.indexHolder.value = "";
+        this.saveToLocalStorage();
+        this.render();
+    }
+    
+
 
     // to toggle Complete
     toggleComplete(id) {

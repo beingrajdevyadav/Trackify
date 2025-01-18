@@ -10,6 +10,43 @@
 
 body{
     padding: 1rem;
+    color: #444;
+}
+/* header  */
+header{
+    text-align: center;
+}
+main{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+margin: 1rem 0;
+}
+
+/* image container */
+.img-container{
+    width: 30%;
+}
+.img-container img {
+    width: 100%;
+}
+
+/* to do container */
+.todo-container{
+    width: 30%;
+    height: 80vh;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #ddd;
+
+}
+.todo-container h2{
+    text-align: center;
+}
+.todo-container .todo-form {
+    margin: .5rem 0;
 }
 .index-holder{
     display: none;
@@ -38,3 +75,7 @@ body{
 button{
     margin-left: 5px;
 }
+
+/* footer */
+
+/* responsiveness */
